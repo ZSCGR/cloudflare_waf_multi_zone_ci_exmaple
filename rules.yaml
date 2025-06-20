@@ -6,7 +6,13 @@ rules:
     9009 35913 31034 8100 46844 40676 53667 209605 212238 29802 48693})
   name: Block Known Bad ASNs (AbuseIPDB)
 
-# 第二優先級：允許核心合法服務（精簡版）
+# 第二优先级
+- action: block
+  expression: (ip.src in {136.243.216.232 43.134.171.180 54.175.182.99 3.85.24.248 179.43.191.18 92.204.239.20}) or (http.user_agent contains "InternetMeasurement") or (http.user_agent contains "Censys") or (http.user_agent contains "HeadlessChrome") or (ip.geoip.asnum in {14168 16509 211298 45102 63023 200593 399486 7713 135377 135377 14061 209854 401120 206092 36903 48693 8758 216167 14987 208161 206092 204428 8560 31898 137409 48090 16276 16509 210558 198953 212238 51167 202425 58224 60068 9009 401116 174 28573 52053 206216 16276 396356 62240 43641 8075 22295 62610 25369 19871 211590 197540 198605 49870}) or (http.user_agent contains "Expanse") or (http.user_agent contains "OPD") or (http.user_agent contains "fasthttp") or (http.user_agent contains "ALittle Client") or (ip.src.country in {"SC" "IE"}) or (http.request.uri.path contains "/.git") or (http.request.uri.path contains "/.env") or (http.user_agent contains "ct‑git‑scanner") or (http.user_agent contains "python-requests")
+  name: Block From Linuxdo
+
+
+# 第三優先級：允許核心合法服務（精簡版）
 - action: skip
   expression: (cf.client.bot) or (http.user_agent contains "Expanse, a Palo Alto Networks company") or (http.user_agent contains "Shodan") or (http.user_agent contains "Censys") or (http.user_agent contains "UptimeRobot") or (http.user_agent contains "Pingdom") or (http.user_agent contains "Googlebot") or (http.user_agent contains "Bingbot") or (http.user_agent contains "Slurp") or (http.user_agent contains "DuckDuckBot") or (http.user_agent contains "Baiduspider") or (http.user_agent contains "YandexBot") or (http.user_agent contains "facebookexternalhit") or (http.user_agent contains "Twitterbot") or (http.user_agent contains "LinkedInBot") or (http.user_agent contains "WhatsApp") or (http.user_agent contains "Discordbot") or (http.user_agent contains "AppleBot") or (http.user_agent contains "ia_archiver")
   name: Allow Essential Legitimate Services
