@@ -2,6 +2,6 @@
 # 不要在此文件中設置 API token，以提高安全性
 
 zone_ids = {
-  "homieyeng.top" = "1791cd65881eb3caf7d1a3cb315342a5"
-  "homieyang.dpdns.org"   = "42e0fad5233017cf842727c41ce3ef89"
+  "255254.xyz" = "56057e1af33f443d342b61a75bef012a"
+  "066633.xyz"   = "0a243c6aedb9ead02967c7439134a8af"
 }
